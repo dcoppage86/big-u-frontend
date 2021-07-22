@@ -1,4 +1,5 @@
 import { resetLoginForm } from "./loginForm"
+import { getUserTrips } from "./userEntries"
 
 // synchronous
 export const setCurrentUser = user => {
@@ -32,6 +33,7 @@ export const login = credentials => {
                 alert(respsonse.error)
             } else {
                 dispatch(setCurrentUser(respsonse.data))
+                dispatch(getUserTrips())
                 dispatch(resetLoginForm())
             }
         })
