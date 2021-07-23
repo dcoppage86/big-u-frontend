@@ -1,9 +1,10 @@
 import React from 'react'
+// import UserEntries from './UserEntries'
 
 const MainContainer = () => {
     return (
         <div className="MainContainer">
-            This is the main container
+            {/* <UserEntries /> */}
         </div>
     )}
 

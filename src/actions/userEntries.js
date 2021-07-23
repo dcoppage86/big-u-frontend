@@ -8,7 +8,7 @@ export const setUserEntries = entries => {
 
 // async
 
-export const getUserTrips = () => {
+export const getUserEntries = () => {
     return dispatch => {
         return fetch("http://localhost:3001/api/v1/daily_entries", {
             credentials: "include",
@@ -22,7 +22,8 @@ export const getUserTrips = () => {
             if (response.error) {
                 alert(response.error)
             } else {
-                dispatch(setUserEntries([]))
+                console.log(response.data)
+                dispatch(setUserEntries(response.data))
             }
         })
         .catch(console.log)

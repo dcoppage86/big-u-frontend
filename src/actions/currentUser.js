@@ -1,5 +1,5 @@
 import { resetLoginForm } from "./loginForm"
-import { getUserTrips } from "./userEntries"
+import { getUserEntries } from "./userEntries"
 
 // synchronous
 export const setCurrentUser = user => {
@@ -28,12 +28,12 @@ export const login = credentials => {
             body: JSON.stringify(credentials)
         })
         .then(response => response.json())
-        .then(respsonse => {
-            if (respsonse.error) {
-                alert(respsonse.error)
+        .then(response => {
+            if (response.error) {
+                alert(response.error)
             } else {
-                dispatch(setCurrentUser(respsonse.data))
-                dispatch(getUserTrips())
+                dispatch(setCurrentUser(response.data))
+                dispatch(getUserEntries(response.data))
                 dispatch(resetLoginForm())
             }
         })
