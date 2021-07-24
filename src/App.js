@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser.js"
 import NavBar from "./components/NavBar.js"
 import MainContainer from "./components/MainContainer.js"
+import {BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 class App extends React.Component {
 
@@ -13,10 +14,12 @@ class App extends React.Component {
   
   render() {
     return (
-      <div className="app">
-        <NavBar />
-        <MainContainer />
-      </div>
+      <Router>
+        <div className="app">
+          <NavBar />
+          <MainContainer />
+        </div>
+      </Router>
 
     );
 
