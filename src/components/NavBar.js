@@ -12,17 +12,15 @@ const NavigationBar = ({ currentUser }) => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#features">About</Nav.Link>
+          <Nav.Link href="/about">About</Nav.Link>
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/user-entries">Entries</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Library</NavDropdown.Item>
+            {currentUser ? <NavDropdown.Item href="/user-entries">Entries</NavDropdown.Item> : null}
+            <NavDropdown.Item href="/Library">Library</NavDropdown.Item>
+            <NavDropdown.Item href="/contact">Contact Us</NavDropdown.Item>
           </NavDropdown>
         </Nav>
         <Nav>
-          <Nav.Link href="#deets">More deets</Nav.Link>
-          <Nav.Link eventKey={2} href="#memes">
-            {currentUser ? <Logout/> : <Login/>}
-          </Nav.Link>
+          {currentUser ? <Logout/> : <Login/>} 
         </Nav>
       </Navbar.Collapse>
       </Container>
