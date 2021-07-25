@@ -3,7 +3,7 @@ import './App.css';
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser.js"
 import NavBar from "./components/NavBar.js"
-import UserEntries from './components/UserEntries';
+import CardContainer from './containers/CardContainer';
 import HomePage from './components/HomePage';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -21,7 +21,7 @@ class App extends React.Component {
         <div className="app">
           <NavBar />
             <Route exact path="/" component={HomePage}/>
-            <Route exact path="/user-entries" component={UserEntries}/>
+            <Route exact path="/user-entries" component={CardContainer}/>
         </div>
       </Router>
 
