@@ -1,9 +1,7 @@
 import React from 'react'
-import { Container } from 'react-bootstrap';
 
 const HomePage = () => {
     return (
-        <Container>
             <div className="home-container">
                 <h1>Welcome to Big-U</h1>
                 <h3>A place to vent, discuss and educate</h3>
@@ -19,7 +17,6 @@ const HomePage = () => {
                     <li>Currently there is no cure for autism, though with early intervention and treatment, the diverse symptoms related to autism can be greatly improved and in some cases completely overcome.</li>
                 </ul>
             </div>
-        </Container>
     )
 }
 
