@@ -5,6 +5,7 @@ import { getCurrentUser } from "./actions/currentUser.js"
 import NavBar from "./components/NavBar.js"
 import CardContainer from "./components/CardContainer"
 import { BrowserRouter as Router } from "react-router-dom";
+import HomePage from './components/HomePage';
 
 class App extends React.Component {
 
@@ -17,6 +18,7 @@ class App extends React.Component {
       <Router>
         <div className="app">
           <NavBar />
+          <HomePage/>
           <CardContainer/>
         </div>
       </Router>
