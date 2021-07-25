@@ -3,8 +3,8 @@ import './App.css';
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser.js"
 import NavBar from "./components/NavBar.js"
-import MainContainer from "./components/MainContainer.js"
-import {BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import CardContainer from "./components/CardContainer"
+import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends React.Component {
 
@@ -17,7 +17,7 @@ class App extends React.Component {
       <Router>
         <div className="app">
           <NavBar />
-          <MainContainer />
+          <CardContainer/>
         </div>
       </Router>
 
