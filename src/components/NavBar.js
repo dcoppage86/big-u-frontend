@@ -14,7 +14,7 @@ const NavigationBar = ({ currentUser }) => {
         <Nav className="me-auto">
           <Nav.Link href="#features">About</Nav.Link>
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/entries">Entries</NavDropdown.Item>
+            <NavDropdown.Item href="/user-entries">Entries</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Library</NavDropdown.Item>
           </NavDropdown>
         </Nav>
