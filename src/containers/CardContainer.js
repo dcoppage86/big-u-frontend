@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap';
 const CardContainer = (props) => {
     return (
         <Container>
-            <div className="MainContainer">
+            <div className="Card-Container">
             <UserEntries/>
             </div>
         </Container>
