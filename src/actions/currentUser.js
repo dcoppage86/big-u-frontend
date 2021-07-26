@@ -1,4 +1,5 @@
 import { resetLoginForm } from "./loginForm"
+import { resetSignupForm } from "./signupForm"
 import { getUserEntries } from "./userEntries"
 
 // synchronous
@@ -35,6 +36,32 @@ export const login = credentials => {
                 dispatch(setCurrentUser(response.data))
                 dispatch(getUserEntries())
                 dispatch(resetLoginForm())
+            }
+        })
+        .catch(console.log)
+    }
+}
+
+export const signup = credentials => {
+    console.log("credentials are", credentials)
+    return dispatch => {
+        const userInfo = {
+            user: credentials
+        }
+        return fetch("http://localhost:3001/api/v1/signup", {
+            credentials: "include",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userInfo)
+        })
+        .then(response => response.json())
+        .then(response => {
+            if (response.error) {
+                alert(response.error)
+            } else {
+                dispatch(resetSignupForm())
             }
         })
         .catch(console.log)
