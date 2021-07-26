@@ -1,6 +1,5 @@
 import React from 'react'
 import Login from '../components/Login';
-import Logout from '../components/Logout'
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
@@ -18,7 +17,7 @@ const LoginContainer = ({ currentUser }) => {
         <StyledContainer>
             <div className="login-container">
             {currentUser ? "You're Already Logged In!" : null} 
-            {currentUser ?  <Logout/> : <Login/> }
+            {currentUser ?  null : <Login/> }
             </div>
         </StyledContainer>
     )}
