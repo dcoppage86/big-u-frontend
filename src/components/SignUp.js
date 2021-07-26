@@ -20,14 +20,38 @@ const Signup = ({ signupFormData, updateSignupForm }) => {
     }
 
     return (
-        <form onSubmit={ handleSubmit }>
-            <input placeholder="first_name" value={signupFormData.first_name} name="first_name" type="text" onChange={ handleInputChange } />
-            <input placeholder="last_name" value={signupFormData.last_name} name="last_name" type="text" onChange={ handleInputChange } />
-            <input placeholder="childs_name" value={signupFormData.childs_name} name="childs_name" type="text" onChange={ handleInputChange } />
-            <input placeholder="email" value={signupFormData.email} name="email" type="text" onChange={ handleInputChange } />
-            <input placeholder="username" value={signupFormData.username} name="username" type="text" onChange={ handleInputChange } />
-            <input placeholder="password" value={signupFormData.password} name="password" type="text" onChange={ handleInputChange } />
-            <input type="submit" value="signup" />
+        < form onSubmit={ handleSubmit }>
+            <h3>Register</h3>
+
+            <div className="form-group">
+                <label>First name</label>
+                <input type="text" value={signupFormData.first_name} name="first_name" onChange={ handleInputChange } className="form-control" placeholder="First name" />
+            </div>
+
+            <div className="form-group">
+                <label>Last name</label>
+                <input input type="text" className="form-control" placeholder="Last name" value={signupFormData.last_name} name="last_name" onChange={ handleInputChange } />
+            </div>
+
+            <div className="form-group">
+                <label>Childs Name (Optional)</label>
+                <input type="text" className="form-control" placeholder="childs_name" value={signupFormData.childs_name} name="childs_name" onChange={ handleInputChange } />
+            </div>
+
+            <div className="form-group">
+                <label>Email</label>
+                <input type="text" className="form-control" placeholder="email" value={signupFormData.email} name="email" onChange={ handleInputChange } />
+            </div>
+
+            <div className="form-group">
+                <label>Password</label>
+                <input input type="password" className="form-control" placeholder="username" value={signupFormData.username} name="username" onChange={ handleInputChange } />
+            </div>
+
+            <button type="submit" className="btn btn-dark btn-lg btn-block" value="signup">Sign Up</button>
+            <p className="forgot-password text-right">
+                Already registered <a href="/login">log in?</a>
+            </p>
         </form>
     )
 }
