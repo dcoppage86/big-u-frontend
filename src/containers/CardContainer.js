@@ -6,6 +6,9 @@ const CardContainer = (props) => {
     return (
         <Container>
             <div className="Card-Container">
+            <h3>Daily Entries</h3>
+            <p>Keep track of your daily struggles and victories, no matter how big or small</p>
+            <br></br>
             <UserEntries/>
             </div>
         </Container>
