@@ -7,7 +7,7 @@ import CardContainer from './containers/CardContainer';
 import HomeContainer from './containers/HomeContainer';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import AboutContainer from './containers/AboutContainer';
-import Signup from './components/SignUp';
+import SignupContainer from './containers/SignupContainer';
 
 
 
@@ -23,7 +23,7 @@ class App extends React.Component {
         <div className="app">
           <NavBar />
             <Route exact path="/" component={HomeContainer}/>
-            <Route exact path="/signup" component={Signup}/>
+            <Route exact path="/signup" component={SignupContainer}/>
             <Route exact path="/user-entries" component={CardContainer}/>
             <Route exact path="/about" component={AboutContainer}/>
         </div>
