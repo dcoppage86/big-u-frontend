@@ -2,6 +2,7 @@ import React from 'react'
 import UserEntries from '../components/UserEntries'
 import { Container } from 'react-bootstrap';
 
+
 const CardContainer = (props) => {
     return (
         <Container>
