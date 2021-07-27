@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { updateLoginForm } from '../actions/loginForm';
+import { useHistory } from 'react-router';
 import { login } from '../actions/currentUser';
 
 
 const Login = ({ loginFormData, updateLoginForm, login }) => {
+    let history = useHistory();
+
     const handleInputChange = event => {
         const { name, value } = event.target
         const updatedFormInfo = {
@@ -17,6 +20,7 @@ const Login = ({ loginFormData, updateLoginForm, login }) => {
     const handleSubmit = event => {
         event.preventDefault()
         login(loginFormData)
+        history.push("/user-entries")
     }
 
     return (
@@ -31,7 +35,7 @@ const Login = ({ loginFormData, updateLoginForm, login }) => {
                 <label>Password</label>
                 <input className="form-control" placeholder="password" value={loginFormData.password} name="password" type="text" onChange={ handleInputChange } />
             </div>
-            <button type="submit" className="btn btn-dark btn-lg btn-block" value="login">Login</button>
+            <button type="submit" className="btn btn-dark btn-lg btn-block" value="login" >Login</button>
         </form>
     )
 }
