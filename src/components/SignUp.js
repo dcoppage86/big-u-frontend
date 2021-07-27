@@ -2,9 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { updateSignupForm } from '../actions/signupForm';
 import { signup } from '../actions/currentUser';
+import { useHistory } from 'react-router';
 
 
 const Signup = ({ signupFormData, updateSignupForm, signup }) => {
+    let history = useHistory();
+
     const handleInputChange = event => {
         const { name, value } = event.target
         const updatedFormInfo = {
@@ -17,6 +20,7 @@ const Signup = ({ signupFormData, updateSignupForm, signup }) => {
     const handleSubmit = event => {
         event.preventDefault()
         signup(signupFormData)
+        history.push("/")
     }
 
     return (
