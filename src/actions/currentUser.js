@@ -2,6 +2,7 @@ import { resetLoginForm } from "./loginForm"
 import { resetSignupForm } from "./signupForm"
 import { getUserEntries } from "./userEntries"
 
+
 // synchronous
 export const setCurrentUser = user => {
     return {
