@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { getCurrentUser } from "./actions/currentUser.js"
+import { getBooks } from './actions/books.js';
 import NavBar from "./components/NavBar.js";
 import CardContainer from './containers/CardContainer';
 import HomeContainer from './containers/HomeContainer';
@@ -9,14 +10,16 @@ import AboutContainer from './containers/AboutContainer';
 import SignupContainer from './containers/SignupContainer';
 import LoginContainer from './containers/LoginContainer';
 import ContactContainer from './containers/ContactContainer.js';
+import LibraryContainer from './containers/LibraryContainer'
 
 
 
 
 class App extends React.Component {
 
-  componentDidMount() {
-    this.props.getCurrentUser()
+  componentDidMount = () => {
+    this.props.getCurrentUser();
+    this.props.getBooks()
 
   }
   
@@ -31,6 +34,7 @@ class App extends React.Component {
             <Route exact path="/user-entries" component={CardContainer}/>
             <Route exact path="/about" component={AboutContainer}/>
             <Route exact path="/contact" component={ContactContainer}/>
+            <Route exact path="/library" component={LibraryContainer}/>
             <Route exact path="/login" component={LoginContainer}/>
           </Switch>
         </div>
@@ -41,4 +45,4 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, { getCurrentUser })(App);
+export default connect(null, { getCurrentUser, getBooks })(App);
