@@ -16,7 +16,9 @@ const CardContainer = ({currentUser, Logout}) => {
             <h3>Daily Entries</h3>
             <p>Keep track of your daily struggles and victories, no matter how big or small</p>
             <br></br>
-            <UserEntries/>
+            <div style={{display: 'flex', flexDirection: 'row'}} className="Entry-Card-Container">
+                <UserEntries/>
+            </div>
             </div> : "YOU DO NOT HAVE ACCESS!"}
         </StyledContainer>
     )}
