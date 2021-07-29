@@ -7,8 +7,8 @@ const BookCard = ({ book }) => {
         <Card style={{ width: '18rem' }}>
             <Card.Body>
                 <Card.Img variant="top" src={book.attributes.image_url}/>
-                <Card.Title><h3>{book.attributes.title}</h3></Card.Title>
-                <Card.Text><h4>{book.attributes.author}</h4></Card.Text>
+                <Card.Title>{book.attributes.title}</Card.Title>
+                <Card.Text>{book.attributes.author}</Card.Text>
                 <Card.Link href={book.attributes.book_url}>Find Here</Card.Link>
             </Card.Body>
         </Card>
