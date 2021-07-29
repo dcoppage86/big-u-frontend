@@ -5,9 +5,9 @@ const initialState = {
 
 const userEntryForm = (state=initialState, action) => {
     switch (action.type) {
-        case "NEW_USER_ENTRY":
+        case "UPDATE_ENTRY_FORM":
             return action.formData
-        case "RESET_SIGNUP_FORM":
+        case "RESET_ENTRY_FORM":
             return initialState
         default:
             return state
