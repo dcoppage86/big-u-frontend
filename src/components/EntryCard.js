@@ -10,7 +10,6 @@ const EntryCard = ({ daily_entry }) => {
                     {daily_entry.attributes.content}
                 </Card.Text>
                 <Card.Link href="#">Delete</Card.Link>
-                <Card.Link href="#">Edit</Card.Link>
             </Card.Body>
         </Card>
     )
