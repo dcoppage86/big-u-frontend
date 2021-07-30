@@ -5,6 +5,13 @@ export const setUserEntries = entries => {
     }
 }
 
+export const removeUserEntry = entryId => {
+    return {
+        type: "DELETE_ENTRY",
+        entryId
+    }
+}
+
 
 // async
 
@@ -27,5 +34,23 @@ export const getUserEntries = () => {
             }
         })
         .catch(console.log)
+    }
+}
+
+export const deleteEntry = (entryId) => {
+    return dispatch => {
+        dispatch(removeUserEntry)
+        return fetch(`http://localhost:3001/api/v1/daily_entries/${entryId}`, {
+            credentials: "include",
+            method: "DELETE"
+        })
+        .then(response => response.json())
+        .then(response => {
+            if (response.error) {
+                alert(response.error)
+            } else {
+                dispatch(removeUserEntry(entryId))
+            }
+        })
     }
 }
