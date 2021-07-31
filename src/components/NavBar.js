@@ -2,25 +2,26 @@ import React from 'react';
 import { connect } from 'react-redux'
 import Logout from './Logout';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 
 const NavigationBar = ({ currentUser }) => {
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-      <Navbar.Brand href="/">BIG-U</Navbar.Brand>
+      <NavLink exact className="navbar-brand" to ="/">BIG-U</NavLink>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="/about">About</Nav.Link>
+          <NavLink className="nav-link" to="/about">About</NavLink>
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="/user-entries">Entries</NavDropdown.Item>
-            <NavDropdown.Item href="/library">Library</NavDropdown.Item>
-            <NavDropdown.Item href="/contact">Contact Us</NavDropdown.Item>
+            <NavLink className="dropdown-item" exact to="/user-entries">Entries</NavLink>
+            <NavLink className="dropdown-item" exact to="/library">Library</NavLink>
+            <NavLink className="dropdown-item" exact to="/contact">Contact Us</NavLink>
           </NavDropdown>
         </Nav>
         <Nav>
-          {currentUser ? null : <Nav.Link href="/signup">Sign Up</Nav.Link>}
-          {currentUser ? <Logout/> : <Nav.Link href="/login">Login</Nav.Link>}
+          {currentUser ? null : <NavLink exact className="nav-link" to="/signup">Sign Up</NavLink>}
+          {currentUser ? <Logout/> : <NavLink exact className="nav-link" to="/login">Login</NavLink>}
         </Nav>
       </Navbar.Collapse>
       </Container>
