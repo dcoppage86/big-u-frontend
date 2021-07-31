@@ -4,10 +4,11 @@ import { Button } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { deleteEntry } from '../actions/userEntries'
 
-const EntryCard = ({ daily_entry, entryId }) => {
+const EntryCard = ({ daily_entry, deleteEntry }) => {
+    const entryId = daily_entry ? daily_entry.id : null
 
     const handleClick = event => {
-        console.log("clicked")
+        console.log(deleteEntry)
         event.preventDefault()
         deleteEntry(entryId)
     }
