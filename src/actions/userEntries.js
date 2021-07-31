@@ -39,7 +39,6 @@ export const getUserEntries = () => {
 
 export const deleteEntry = (entryId) => {
     return dispatch => {
-        dispatch(removeUserEntry)
         return fetch(`http://localhost:3001/api/v1/daily_entries/${entryId}`, {
             credentials: "include",
             method: "DELETE"
