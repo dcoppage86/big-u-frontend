@@ -20,7 +20,7 @@ const StyledForm = styled.form `
 `
 
 
-const Login = ({ loginFormData, updateLoginForm, login }) => {
+const Login = ({ loginFormData, updateLoginForm, login, currentUser }) => {
     let history = useHistory();
 
     const handleInputChange = event => {
@@ -48,16 +48,17 @@ const Login = ({ loginFormData, updateLoginForm, login }) => {
 
             <div className="form-group">
                 <label>Password</label>
-                <input className="form-control" placeholder="password" value={loginFormData.password} name="password" type="text" onChange={ handleInputChange } />
+                <input className="form-control" placeholder="password" value={loginFormData.password} name="password" type="password" onChange={ handleInputChange } />
             </div>
             <br></br>
             <button type="submit" className="btn btn-dark btn-lg btn-block" value="login" >Login</button>
         </StyledForm>
     )
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state, { currentUser }) => {
     return {
-        loginFormData: state.loginForm
+        loginFormData: state.loginForm,
+        currentUser
     }
 }
 export default connect(mapStateToProps, { updateLoginForm, login })(Login);
