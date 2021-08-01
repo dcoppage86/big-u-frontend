@@ -9,6 +9,7 @@ const BookCard = ({ book }) => {
                 <Card.Img variant="top" src={book.attributes.image_url}/>
                 <Card.Title>{book.attributes.title}</Card.Title>
                 <Card.Text>{book.attributes.author}</Card.Text>
+                <Card.Text><strong>{book.attributes.category.name}</strong></Card.Text>
                 <Card.Link href={book.attributes.book_url}>Find Here</Card.Link>
             </Card.Body>
         </Card>
