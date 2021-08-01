@@ -6,7 +6,11 @@ const initialState = {
 const userEntryForm = (state=initialState, action) => {
     switch (action.type) {
         case "UPDATE_ENTRY_FORM":
-            return action.formData
+            const returnInfo = {
+                ...state,
+                [action.formData.name]: action.formData.value
+            }
+            return returnInfo
         case "RESET_ENTRY_FORM":
             return initialState
         default:
