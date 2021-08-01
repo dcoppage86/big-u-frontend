@@ -4,11 +4,10 @@ import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const StyledContainer = styled(Container)`
-    padding: 100px;
-    height: 700px;
-    width: 700px;
-    justify-content: centered;
+    padding-top: 10%;
+    padding-bottom: 10%
 `
+
 
 const ContactContainer = (props) => {
     return (

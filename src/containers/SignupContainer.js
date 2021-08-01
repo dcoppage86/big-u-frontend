@@ -4,18 +4,15 @@ import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const StyledContainer = styled(Container)`
-    padding: 100px;
-    height: 500px;
-    width: 500px;
-    justify-content: centered;
-    `
-
+    padding-top: 10%;
+    padding-bottom: 10%
+`
 
 const SignupContainer = (props) => {
     return (
         <StyledContainer>
             <div className="signup-container">
-            <SignUp/>
+                <SignUp/>
             </div>
         </StyledContainer>
     )}

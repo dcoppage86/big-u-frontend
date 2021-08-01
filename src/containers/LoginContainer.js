@@ -1,15 +1,13 @@
 import React from 'react'
 import Login from '../components/Login';
+import { connect } from 'react-redux';
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
 
 const StyledContainer = styled(Container)`
-    padding: 100px;
-    height: 500px;
-    width: 500px;
-    justify-content: centered;
-    `
+    ppadding-top: 10%;
+    padding-bottom: 10%
+`
 
 
 const LoginContainer = ({ currentUser }) => {
