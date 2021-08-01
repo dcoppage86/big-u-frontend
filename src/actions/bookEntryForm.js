@@ -1,5 +1,5 @@
 // sync
-export const bookEntryForm = (name, value) => {
+export const updateBookForm = (name, value) => {
     const formData = { name, value }
     return {
         type: "UPDATE_ENTRY_FORM",
