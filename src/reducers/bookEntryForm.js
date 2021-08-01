@@ -2,7 +2,8 @@ const initialState = {
     title: "",
     author: "",
     image_url: "",
-    book_url: ""
+    book_url: "",
+    category: ""
 }
 
 const bookEntryForm = (state=initialState, action) => {
