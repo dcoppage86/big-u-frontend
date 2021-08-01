@@ -2,6 +2,7 @@ import React from 'react'
 import Library from '../components/Library';
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
+import BookForm from '../components/BookForm.js'
 
 const StyledContainer = styled(Container)`
     padding-top: 10%;
@@ -30,6 +31,10 @@ const LibraryContainer = () => {
                     <h3>Library</h3>
                     <p>These are books may help in your journey, Feel free to add more to the list!</p>
                     <br></br>
+                        <div>
+                            <BookForm/>
+                        </div>
+                        <br></br>
                         <div style={{display: 'flex', flexDirection: 'row'}} className="Card-Container">
                             <Library />
                         </div>
