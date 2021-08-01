@@ -3,6 +3,21 @@ import { connect } from 'react-redux'
 import { updateLoginForm } from '../actions/loginForm';
 import { useHistory } from 'react-router';
 import { login } from '../actions/currentUser';
+import styled from 'styled-components';
+
+const StyledForm = styled.form `
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    width: 450px;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 40px 55px 45px 55px;
+    border-radius: 15px;
+    transition: all .3s;
+`
 
 
 const Login = ({ loginFormData, updateLoginForm, login }) => {
@@ -24,7 +39,7 @@ const Login = ({ loginFormData, updateLoginForm, login }) => {
     }
 
     return (
-        <form onSubmit={ handleSubmit }>
+        <StyledForm onSubmit={ handleSubmit }>
         <h3>Already Signed Up?</h3>
             <div className="form-group">
                 <label>Username</label>
@@ -35,8 +50,9 @@ const Login = ({ loginFormData, updateLoginForm, login }) => {
                 <label>Password</label>
                 <input className="form-control" placeholder="password" value={loginFormData.password} name="password" type="text" onChange={ handleInputChange } />
             </div>
+            <br></br>
             <button type="submit" className="btn btn-dark btn-lg btn-block" value="login" >Login</button>
-        </form>
+        </StyledForm>
     )
 }
 const mapStateToProps = state => {

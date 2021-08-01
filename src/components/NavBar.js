@@ -14,8 +14,8 @@ const NavigationBar = ({ currentUser }) => {
         <Nav className="me-auto">
           <NavLink className="nav-link" to="/about">About</NavLink>
           <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-            <NavLink className="dropdown-item" exact to="/user-entries">Entries</NavLink>
-            <NavLink className="dropdown-item" exact to="/library">Library</NavLink>
+            {currentUser ? <NavLink className="dropdown-item" exact to="/user-entries">Entries</NavLink> : null}
+            {currentUser ? <NavLink className="dropdown-item" exact to="/library">Library</NavLink> : null}
             <NavLink className="dropdown-item" exact to="/contact">Contact Us</NavLink>
           </NavDropdown>
         </Nav>

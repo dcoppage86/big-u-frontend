@@ -3,6 +3,29 @@ import { connect } from 'react-redux'
 import { updateSignupForm } from '../actions/signupForm';
 import { signup } from '../actions/currentUser';
 import { useHistory } from 'react-router';
+import styled from 'styled-components';
+
+const StyledH3 = styled.h3 `
+    text-align: center;
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 20px;
+`
+const StyledForm = styled.form `
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  width: 450px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all .3s;
+`
+
+
 
 
 const Signup = ({ signupFormData, updateSignupForm, signup }) => {
@@ -24,8 +47,8 @@ const Signup = ({ signupFormData, updateSignupForm, signup }) => {
     }
 
     return (
-        < form onSubmit={ handleSubmit }>
-            <h3>Register</h3>
+        < StyledForm onSubmit={ handleSubmit }>
+            <StyledH3>Register</StyledH3>
 
             <div className="form-group">
                 <label>First name</label>
@@ -56,12 +79,12 @@ const Signup = ({ signupFormData, updateSignupForm, signup }) => {
                 <label>Password</label>
                 <input type="password" className="form-control" placeholder="password" value={signupFormData.password} name="password" onChange={ handleInputChange } />
             </div>
-
+            <br></br>
             <button type="submit" className="btn btn-dark btn-lg btn-block" value="signup">Sign Up</button>
             <p className="forgot-password text-right">
                 Already registered <a href="/login">log in?</a>
             </p>
-        </form>
+        </StyledForm>
     )
 }
 const mapStateToProps = state => {

@@ -1,8 +1,24 @@
 import React from 'react'
+import styled from 'styled-components';
+
+const StyledDiv = styled.div `
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+    width: auto;
+    margin: auto;
+    background: #ffffff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 40px 55px 45px 55px;
+    border-radius: 15px;
+    transition: all .3s;
+`
+
 
 const About = () => {
     return (
-        <div className="about-div">
+        <StyledDiv className="about-div">
             <h3>About Us </h3>
             <br></br>
             <p>At <b>Big-U</b> we believe in making a safe environment for parents of children with autism and adults struggling with autism.</p>
@@ -27,7 +43,7 @@ const About = () => {
             <br></br>
             <p>This site is about <b>UNITY</b>. and gaining knowledge is what is important to us. At <b>Big-U</b> you will find the resources
             to aid in your own families/self development and connect with others that our in the same place.</p>
-        </div>
+        </StyledDiv>
     )
 }
 
