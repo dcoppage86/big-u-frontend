@@ -62,7 +62,6 @@ export const newBook = (bookData) => {
         })
         .then(response => response.json())
         .then(response => {
-            console.log(response)
             if (response.error) {
                 alert(response.error)
             } else {

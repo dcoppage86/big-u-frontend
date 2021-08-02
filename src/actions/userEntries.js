@@ -91,5 +91,6 @@ export const deleteEntry = (entryId) => {
                 dispatch(removeUserEntry(entryId))
             }
         })
+        .catch(console.log)
     }
 }
