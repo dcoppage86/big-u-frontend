@@ -4,8 +4,8 @@ import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 
 const StyledContainer = styled(Container)`
-    padding-top: 10%;
-    padding-bottom: 10%
+    padding-top: 5%;
+    padding-bottom: 5%
 `
 
 const AboutContainer = (props) => {

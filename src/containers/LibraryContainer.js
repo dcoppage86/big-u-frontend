@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import BookForm from '../components/BookForm.js'
 
 const StyledContainer = styled(Container)`
-    padding-top: 10%;
-    padding-bottom: 10%
+    padding-top: 5%;
+    padding-bottom: 5%
 `
 
 const StyledDiv1 = styled.div `
