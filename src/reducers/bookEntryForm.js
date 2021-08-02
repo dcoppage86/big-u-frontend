@@ -13,7 +13,7 @@ const bookEntryForm = (state=initialState, action) => {
                 [action.bookFormData.name]: action.bookFormData.value
             }
             return returnInfo
-        case "RESET_ENTRY_FORM":
+        case "RESET_BOOK_FORM":
             return initialState
         default:
             return state
