@@ -14,6 +14,13 @@ export const addBook = book => {
     }
 }
 
+export const removeBook = bookId => {
+    return {
+        type: "DELETE_BOOK",
+        bookId
+    }
+}
+
 export const getBooks = () => {
     return dispatch => {
         return fetch("http://localhost:3001/api/v1/books", {
@@ -66,5 +73,23 @@ export const newBook = (bookData) => {
             }
         })
         .catch(console.log)
+    }
+}
+
+export const deleteBook = (bookId) => {
+    return dispatch => {
+        return fetch(`http://localhost:3001/api/v1/books/${bookId}`, {
+            credentials: "include",
+            method: "DELETE"
+
+        })
+        .then(response => response.json())
+        .then(response => {
+            if (response.error) {
+                alert(response.error)
+            } else {
+                dispatch(removeBook(bookId))
+            }
+        })
     }
 }
