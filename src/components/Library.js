@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 const Library = ({ books }) => {
     console.log(books)
     const bookCards = books.map(b => <BookCard book={b} key={b.id}/>)
-    console.log(bookCards)
     return (
         bookCards.length > 0 ? bookCards : null
     )
