@@ -4,9 +4,9 @@ import { connect } from 'react-redux'
 import { updateBookForm } from '../actions/bookEntryForm'
 import { Button } from 'react-bootstrap'
 
-const BookForm = ({formData, updateBookForm}) => {
+const BookForm = ({bookFormData, updateBookForm}) => {
 
-    const {title, author, image_url, book_url, category} = formData
+    const {book_title, book_author, image_url, book_url} = bookFormData
 
     const handleInputChange = event => {
         const {name, value} = event.target
@@ -17,7 +17,7 @@ const BookForm = ({formData, updateBookForm}) => {
         <Form>
             <Form.Group>
                 <Form.Label>Title</Form.Label>
-                <Form.Control type="text" name="title" onChange={ handleInputChange } value={title} placeholder="Enter book title..." />
+                <Form.Control type="text" name="book_title" onChange={ handleInputChange } value={book_title} placeholder="Enter book title..." />
             </Form.Group>
             <Form.Group>
                 <Form.Label>Author</Form.Label>
@@ -31,10 +31,6 @@ const BookForm = ({formData, updateBookForm}) => {
                 <Form.Label>Book Url</Form.Label>
                 <Form.Control/>
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Category</Form.Label>
-                <Form.Select/>
-            </Form.Group>
             <br></br>
             <Button type="submit" className="btn btn-dark btn-lg btn-block" value="Add Book">Add Book</Button>
         </Form>
@@ -44,7 +40,8 @@ const BookForm = ({formData, updateBookForm}) => {
 const mapStateToProps = state => {
     const userId = state.currentUser ? state.currentUser.id : ""
     return {
-        formData: state.bookEntryForm,
+        bookFormData: state.bookEntryForm,
+        categories: state.categories,
         userId
     }
 }
