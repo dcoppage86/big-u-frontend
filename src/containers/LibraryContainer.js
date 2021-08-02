@@ -9,7 +9,7 @@ const StyledContainer = styled(Container)`
     padding-bottom: 10%
 `
 
-const StyledDiv = styled.div `
+const StyledDiv1 = styled.div `
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -22,24 +22,28 @@ const StyledDiv = styled.div `
     border-radius: 15px;
     transition: all .3s;
 `
+const StyledDiv2 = styled.div `
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+`
 
 const LibraryContainer = () => {
     return (
         <StyledContainer>
-            <StyledDiv className="library-div">
-                <div className="Library-Container">
-                    <h3>Library</h3>
-                    <p>These are books may help in your journey, Feel free to add more to the list!</p>
-                    <br></br>
-                        <div>
-                            <BookForm/>
-                        </div>
-                        <br></br>
-                        <div style={{display: 'flex', flexDirection: 'row'}} className="Card-Container">
-                            <Library />
-                        </div>
+            <StyledDiv1 className="library-div">
+                <h3>Library</h3>
+                <p>These are books may help in your journey, Feel free to add more to the list!</p>
+                <br></br>
+                <div>
+                    <BookForm/>
                 </div>
-            </StyledDiv>
+                <br></br>
+                <StyledDiv2 style={{display: 'flex', flexDirection: 'row'}} className="Card-Container">
+                    <Library />
+                </StyledDiv2>
+            </StyledDiv1>
         </StyledContainer>
     )}
 
